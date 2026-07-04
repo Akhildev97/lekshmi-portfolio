@@ -292,6 +292,20 @@ footer{text-align:center;padding:44px 20px;color:var(--text-faint);border-top:1p
 @media (prefers-reduced-motion: reduce){
     *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
 }
+ .hero-grid {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .hero-grid > div:first-child {
+        order: 2;
+    }
+    
+    .hero-grid > div:last-child {
+        order: 1;
+        margin-bottom: 20px;
+    }
+}
 </style>
 </head>
 
