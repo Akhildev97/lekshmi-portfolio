@@ -1,259 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lekshmi | Senior Java Backend Developer</title>
+
+<title>Lekshmi | Senior Java Backend Developer | Spring Boot | Microservices</title>
+
+<meta name="description" content="Senior Java Backend Developer in Dubai specializing in Spring Boot, Microservices, REST APIs, and high-availability FinTech applications.">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: Segoe UI, Arial, sans-serif; background: #07111f; color: #eaf2ff; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-    .container { width: 90%; max-width: 1150px; margin: auto; }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:Segoe UI,Arial,sans-serif;background:#07111f;color:#eaf2ff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:90%;max-width:1150px;margin:auto}
 
-    header {
-        position: sticky; top: 0; z-index: 10;
-        background: rgba(7, 17, 31, .94);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, .08);
-    }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
-    .logo { display: flex; align-items: center; gap: 10px; color: #60a5fa; font-weight: 800; font-size: 22px; }
-    .nav-links { display: flex; gap: 22px; font-size: 14px; color: #b9c7d8; }
-    .nav-links a:hover { color: #60a5fa; }
-    
-    .hero {
-        padding: 70px 0 50px;
-        display: grid;
-        grid-template-columns: 1.2fr .8fr;
-        gap: 50px;
-        align-items: center;
-    }
-    .badge {
-        display: inline-block; padding: 8px 14px;
-        border: 1px solid rgba(96, 165, 250, .3);
-        border-radius: 999px; color: #93c5fd;
-        background: rgba(96, 165, 250, .08);
-        margin-bottom: 20px; font-size: 14px;
-    }
-    h1 { font-size: 56px; line-height: 1.1; margin-bottom: 14px; }
-    h1 span { color: #60a5fa; }
-    .subtitle { font-size: 23px; color: #dbeafe; margin-bottom: 18px; }
-    .desc { color: #b9c7d8; max-width: 720px; margin-bottom: 18px; }
-
-    .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn {
-        padding: 13px 20px; border-radius: 10px; font-weight: 700;
-        border: 1px solid rgba(255, 255, 255, .12); transition: .25s;
-        display: flex; align-items: center; gap: 8px; justify-content: center;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .primary { background: #2563eb; color: #fff; }
-    .secondary { background: rgba(255, 255, 255, .06); color: #eaf2ff; }
-
-    .photo-card {
-        position: relative; background: rgba(15, 23, 42, .58);
-        padding: 14px; border-radius: 28px;
-        border: 1px solid rgba(96, 165, 250, .25);
-        box-shadow: 0 15px 35px rgba(37, 99, 235, .16);
-    }
-    .photo-card img { width: 100%; border-radius: 22px; display: block; }
-
-    section { padding: 52px 0; }
-    .section-title { font-size: 32px; margin-bottom: 12px; text-align: center; color: #60a5fa; }
-    .section-sub { color: #94a3b8; margin-bottom: 24px; text-align: center; }
-
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card {
-        background: rgba(15, 23, 42, .86);
-        border: 1px solid rgba(255, 255, 255, .09);
-        border-radius: 18px; padding: 24px;
-        transition: .3s;
-    }
-    .card:hover {
-        transform: translateY(-8px); border-color: #60a5fa;
-        box-shadow: 0 15px 35px rgba(37, 99, 235, .2);
-    }
-    .card h3 { color: #93c5fd; margin-bottom: 10px; }
-    .card p, .card li { color: #b9c7d8; font-size: 15px; }
-
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-    .stat {
-        text-align: center; background: linear-gradient(180deg, rgba(18, 34, 64, .95), rgba(11, 25, 47, .95));
-        border: 1px solid rgba(96, 165, 250, .25); padding: 26px 22px; border-radius: 18px; transition: .3s;
-    }
-    .stat:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 18px 40px rgba(37, 99, 235, .25); border-color: #60a5fa; }
-    .stat h2 { font-size: 46px; font-weight: 800; color: #60a5fa; margin-bottom: 6px; }
-    .stat p { font-size: 19px; font-weight: 500; color: #d9e8ff; }
-
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px;}
-    .skill {
-        padding: 9px 13px; border-radius: 999px;
-        background: rgba(255, 255, 255, .07);
-        border: 1px solid rgba(255, 255, 255, .08);
-        color: #dbeafe; font-size: 14px;
+    header{
+        position:sticky;
+        top:0;
+        z-index:10;
+        background:rgba(7,17,31,.94);
+        backdrop-filter:blur(12px);
+        border-bottom:1px solid rgba(255,255,255,.08)
     }
 
-    .timeline-card {
-        background: #0f172a; border: 1px solid rgba(96, 165, 250, .25);
-        border-radius: 22px; padding: 28px; margin-bottom: 25px; transition: .3s;
+    nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+    .logo{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        color:#60a5fa;
+        font-weight:800;
+        font-size:22px;
     }
-    .timeline-card:hover { transform: translateY(-6px); border-color: #60a5fa; box-shadow: 0 18px 40px rgba(37, 99, 235, .22); }
-    .timeline-card h3 { color: #60a5fa; font-size: 24px; margin-bottom: 4px; }
-    .company { color: #eaf2ff; font-weight: 700; margin-bottom: 15px; }
-    .timeline-card ul { padding-left: 20px; }
-    .timeline-card li { color: #cbd5e1; margin-bottom: 10px; line-height: 1.7; }
 
-    @media(max-width: 850px) {
-        .hero { flex-direction: column-reverse; display: flex; text-align: center; gap: 35px; }
-        .stats, .grid { grid-template-columns: 1fr; }
-        .photo-card { max-width: 320px; margin: auto; }
+    .logo span{
+        color:#60a5fa;
+        font-size:22px;
+        font-weight:800;
+    }
+    .nav-links{display:flex;gap:22px;font-size:14px;color:#b9c7d8}
+    .nav-links a:hover{color:#60a5fa}
+    .nav-links i{
+        margin-right:6px;
+        color:#60a5fa;
+    }
+    .nav-links a.active{
+        color:#60a5fa;
+        font-weight:700;
+    }
+
+    .nav-links a.active i{
+        color:#93c5fd;
+    }
+
+    .hero{
+        padding:70px 0 50px;
+        display:grid;
+        grid-template-columns:1.2fr .8fr;
+        gap:50px;
+        align-items:center
+    }
+
+    .badge{
+        display:inline-block;
+        padding:8px 14px;
+        border:1px solid rgba(96,165,250,.3);
+        border-radius:999px;
+        color:#93c5fd;
+        background:rgba(96,165,250,.08);
+        margin-bottom:20px;
+        font-size:14px
+    }
+
+    h1{font-size:56px;line-height:1.1;margin-bottom:14px}
+    h1 span{color:#60a5fa}
+    .subtitle{font-size:23px;color:#dbeafe;margin-bottom:18px}
+    .desc{color:#b9c7d8;max-width:720px;margin-bottom:18px}
+    .cert-line{margin-bottom:28px;color:#93c5fd;font-size:15px}
+
+    .buttons{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{
+        padding:13px 20px;
+        border-radius:10px;
+        font-weight:700;
+        border:1px solid rgba(255,255,255,.12);
+        transition:.25s
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .primary{background:#2563eb;color:#fff}
+    .secondary{background:rgba(255,255,255,.06);color:#eaf2ff}
+
+    .photo-card{
+        position:relative;
+        background:rgba(15,23,42,.58);
+        backdrop-filter:blur(16px);
+        -webkit-backdrop-filter:blur(16px);
+        padding:14px;
+        border-radius:28px;
+        border:1px solid rgba(96,165,250,.25);
+        box-shadow:0 15px 35px rgba(37,99,235,.16);
+        overflow:visible;
+    }
+
+    .photo-card::before{
+        content:"";
+        position:absolute;
+        inset:20px;
+        background:rgba(37,99,235,.18);
+        border-radius:28px;
+        z-index:-1;
+    }
+
+    .photo-card img{
+        width:100%;
+        border-radius:22px;
+        display:block;
+        position:relative;
+        z-index:1;
+    }
+
+    section{padding:52px 0}
+    .section-title{font-size:32px;margin-bottom:12px;text-align:center;color:#60a5fa;}
+    .section-sub{color:#94a3b8;margin-bottom:24px;text-align:center;}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+        background:rgba(15,23,42,.86);
+        border:1px solid rgba(255,255,255,.09);
+        border-radius:18px;
+        padding:24px;
+        transition:.3s;
+    }
+    .card:hover{
+        transform:translateY(-8px);
+        border-color:#60a5fa;
+        box-shadow:0 15px 35px rgba(37,99,235,.2);
+    }
+    .card h3{color:#93c5fd;margin-bottom:10px}
+    .card p,.card li{color:#b9c7d8;font-size:15px}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .stat{
+        position:relative;
+        overflow:hidden;
+        text-align:center;
+        background:linear-gradient(180deg,rgba(18,34,64,.95),rgba(11,25,47,.95));
+        border:1px solid rgba(96,165,250,.25);
+        padding:26px 22px;
+        border-radius:18px;
+        transition:.3s;
+    }
+    .stat:hover{
+        transform:translateY(-10px) scale(1.02);
+        box-shadow:0 18px 40px rgba(37,99,235,.25);
+        border-color:#60a5fa;
+    }
+
+    .stat h2{
+        font-size:46px;
+        font-weight:800;
+        letter-spacing:-1px;
+        color:#60a5fa;
+        text-shadow:0 0 18px rgba(96,165,250,.25);
+        margin-top:12px;
+        margin-bottom:6px;
+    }
+    .stat p{
+        font-size:19px;
+        font-weight:500;
+        color:#d9e8ff;
+    }
+
+    .stat-icon{
+        width:62px;
+        height:62px;
+        margin:0 auto 18px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:50%;
+        background:rgba(96,165,250,.12);
+        border:1px solid rgba(96,165,250,.25);
+        color:#60a5fa;
+        font-size:26px;
+        transition:.3s;
+    }
+
+    .stat:hover .stat-icon{
+        transform:translateY(-5px) scale(1.12) rotate(-5deg);
+        background:#2563eb;
+        color:#fff;
+        box-shadow:0 0 30px rgba(37,99,235,.45);
+    }
+
+    .summary-list{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:14px;
+        margin-top:20px
+    }
+    .summary-item{
+        background:rgba(255,255,255,.05);
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:14px;
+        padding:16px;
+        color:#dbeafe
+    }
+
+    .skills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px;}
+    .skill{
+        padding:9px 13px;
+        border-radius:999px;
+        background:rgba(255,255,255,.07);
+        border:1px solid rgba(255,255,255,.08);
+        color:#dbeafe;
+        font-size:14px
+    }
+
+    .experience-timeline{
+        position:relative;
+        display:grid;
+        gap:35px;
+        margin-top:25px;
+    }
+
+    .experience-timeline::before{
+        content:"";
+        position:absolute;
+        left:22px;
+        top:0;
+        bottom:8px;
+        width:3px;
+        background:linear-gradient(#60a5fa,#2563eb);
+        border-radius:10px;
+    }
+    .experience-timeline::after{
+        content:"";
+        position:absolute;
+        left:18px;
+        bottom:-6px;
+        width:12px;
+        height:12px;
+        background:#2563eb;
+        border-radius:50%;
+        box-shadow:0 0 18px rgba(37,99,235,.75);
+    }
+
+    .timeline-item{
+        position:relative;
+        display:grid;
+        grid-template-columns:70px 1fr;
+        gap:25px;
+    }
+
+    .timeline-dot{
+        width:46px;
+        height:46px;
+        border-radius:50%;
+        background:#2563eb;
+        color:white;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:800;
+        z-index:2;
+        box-shadow:0 0 25px rgba(37,99,235,.55);
+    }
+
+    .timeline-card{
+        background:#0f172a;
+        border:1px solid rgba(96,165,250,.25);
+        border-radius:22px;
+        padding:28px;
+        transition:.3s;
+    }
+
+    .timeline-card:hover{
+        transform:translateY(-6px);
+        border-color:#60a5fa;
+        box-shadow:0 18px 40px rgba(37,99,235,.22);
+    }
+
+    .timeline-top{
+        display:flex;
+        justify-content:space-between;
+        gap:15px;
+        flex-wrap:wrap;
+        margin-bottom:15px;
+    }
+
+    .timeline-card h3{
+        color:#60a5fa;
+        font-size:24px;
+        margin-bottom:4px;
+    }
+
+    .company{
+        color:#eaf2ff;
+        font-weight:700;
+    }
+
+    .period{
+        color:#93c5fd;
+        font-weight:700;
+    }
+
+    .location{
+        color:#94a3b8;
+        font-size:14px;
+    }
+    .timeline-card ul{
+        margin-top:18px;
+        padding-left:20px;
+    }
+
+    .timeline-card li{
+        color:#cbd5e1;
+        margin-bottom:10px;
+        line-height:1.7;
+    }
+
+    .hero-buttons .btn{
+        display:flex;
+        align-items:center;
+        gap:8px;
+        justify-content:center;
+    }
+
+    .hero-buttons i{
+        font-size:18px;
+    }
+    .section-title i{
+        margin-right:10px;
+        color:#93c5fd;
+    }
+
+    .hero{
+        animation:fadeUp .9s ease both;
+    }
+
+    @keyframes fadeUp{
+        from{opacity:0;transform:translateY(28px);}
+        to{opacity:1;transform:translateY(0);}
+    }
+
+    .floating-social{
+        position:fixed;
+        right:25px;
+        bottom:25px;
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+        z-index:999;
+    }
+
+    .floating-social a{
+        width:55px;
+        height:55px;
+        border-radius:50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:24px;
+        color:#fff;
+        text-decoration:none;
+        box-shadow:0 8px 20px rgba(0,0,0,.3);
+        transition:.3s;
+    }
+
+    .floating-social a:hover{
+        transform:translateY(-5px) scale(1.08);
+    }
+
+    .linkedin{background:#0077B5;}
+    .gmail{background:#EA4335;}
+
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+    @media(max-width:850px){
+        .floating-social{display:none;}
+        body{overflow-x:hidden;}
+        .container{width:92%;}
+        nav{flex-direction:column;gap:10px;text-align:center;padding:12px 0;}
+        .nav-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
+        .hero{display:flex;flex-direction:column-reverse;padding:55px 0 45px;text-align:center;gap:35px;}
+        .buttons{justify-content:center;}
+        .photo-card{max-width:320px;margin:auto;}
+        .stats,.grid,.summary-list,.contact-grid{grid-template-columns:1fr;}
+        .experience-timeline::before{left:18px;bottom:8px;}
+        .experience-timeline::after{left:14px;}
+        .timeline-item{grid-template-columns:50px 1fr;gap:14px;}
+        .timeline-dot{width:38px;height:38px;font-size:14px;}
     }
 </style>
 </head>
+
 <body>
 
 <header>
     <div class="container">
         <nav>
-            <div class="logo"><span>Lekshmi</span></div>
+            <div class="logo">
+                <span>Lekshmi</span>
+            </div>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
+                <a href="#about"><i class="fas fa-user"></i> About</a>
+                <a href="#skills"><i class="fas fa-screwdriver-wrench"></i> Skills</a>
+                <a href="#experience"><i class="fas fa-building"></i> Experience</a>
+                <a href="#contact"><i class="fas fa-address-card"></i> Contact</a>
             </div>
         </nav>
     </div>
 </header>
 
 <main class="container">
-    <!-- Hero Section -->
+
     <section class="hero">
         <div>
-            <div class="badge">Dubai, UAE • Immediate Hire • Open to Senior Java Developer Roles</div>
+            <div class="badge">Dubai, UAE • Immediate Hire • Dependent Visa</div>
+
             <h1>Hi, I'm <span>Lekshmi</span></h1>
-            <div class="subtitle">Senior Java Backend Developer | Spring Boot Microservices | FinTech Expert</div>
+
+            <div class="subtitle">
+                Senior Java Backend Developer | Spring Boot | Microservices | FinTech
+            </div>
+
             <p class="desc">
-                Results-driven Senior Java Backend Developer with 5+ years of expertise in architecting enterprise-grade microservices and secure, high-availability banking applications. Expert in Java 17, Spring Boot, and cloud-native practices.
+                Results-driven Senior Java Backend Developer with 5+ years of expertise in architecting enterprise-grade microservices and secure, high-availability banking applications.
             </p>
-            <div class="buttons">
+
+            <p class="cert-line">
+                🏅 Java 17 • Spring Boot • Microservices Architecture • REST APIs
+            </p>
+
+            <div class="buttons hero-buttons">
                 <a class="btn primary" href="Lekshmi - Java Developer - CV_2.pdf" target="_blank">
                     <i class="fas fa-eye"></i> View My Resume
                 </a>
+                <a class="btn secondary" href="https://linkedin.com/in/lekshmi-b14050140" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
                 <a class="btn secondary" href="mailto:lekshmisaji2825@gmail.com">
-                    <i class="fas fa-envelope"></i> Contact Me
+                    <i class="fa-brands fa-google"></i> Gmail
                 </a>
             </div>
         </div>
+
         <div class="photo-card">
-            <img src="Lekshmi.png" alt="Lekshmi - Senior Java Backend Developer">
+            <img src="Lekshmi.png" alt="Lekshmi - Senior Java Backend Developer" loading="eager">
         </div>
     </section>
 
-    <!-- Stats Section -->
     <section class="stats">
-        <div class="stat"><h2>5+</h2><p>Years Experience</p></div>
-        <div class="stat"><h2>200k+</h2><p>Daily Transactions</p></div>
-        <div class="stat"><h2>99.9%</h2><p>System Uptime</p></div>
-        <div class="stat"><h2>30%</h2><p>Defect Reduction</p></div>
-    </section>
-
-    <!-- Career Snapshot -->
-    <section class="career-snapshot">
-        <h2 class="section-title">Career Snapshot</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>🏦 FinTech Expertise</h3>
-                <p>Delivered secure, high-availability banking applications with 99.9% service availability at Federal Bank.</p>
-            </div>
-            <div class="card">
-                <h3>🚀 Microservices Scale</h3>
-                <p>Engineered 10+ enterprise microservices serving 50,000+ daily active users in the transport sector.</p>
-            </div>
-            <div class="card">
-                <h3>⚡ Performance Optimization</h3>
-                <p>Reduced query response times by 40% through JPA/Hibernate optimization and caching strategies.</p>
-            </div>
+        <div class="stat">
+            <div class="stat-icon"><i class="fas fa-code"></i></div>
+            <h2><span class="counter" data-target="5">0</span>+</h2>
+            <p>Years Experience</p>
+        </div>
+        <div class="stat">
+            <div class="stat-icon"><i class="fas fa-server"></i></div>
+            <h2><span class="counter" data-target="200">0</span>k+</h2>
+            <p>Daily Transactions</p>
+        </div>
+        <div class="stat">
+            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+            <h2><span class="counter" data-target="99">0</span>.9%</h2>
+            <p>System Uptime</p>
+        </div>
+        <div class="stat">
+            <div class="stat-icon"><i class="fas fa-bug-slash"></i></div>
+            <h2><span class="counter" data-target="30">0</span>%</h2>
+            <p>Defect Reduction</p>
         </div>
     </section>
 
-    <!-- About Me -->
     <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-sub">Expert in Java 17, Spring Boot, and cloud-native practices with a focus on FinTech and transportation domains.</p>
+        <h2 class="section-title"><i class="fas fa-user"></i> About Me</h2>
+        <p class="section-sub">
+            Expert in Java 17, Spring Boot, and cloud-native practices with a proven track record in FinTech and transportation domains.
+        </p>
+
         <div class="grid">
             <div class="card">
                 <h3>Backend Architecture</h3>
-                <p>Java 17, J2EE, Spring Boot, Spring Security, SOLID Principles, and Design Patterns.</p>
+                <p>Java 17, J2EE, Spring Boot, Spring Security, Microservices Architecture, SOLID Principles, and API Design.</p>
             </div>
             <div class="card">
                 <h3>Database & Messaging</h3>
-                <p>Oracle, MySQL, PostgreSQL, Stored Procedures, Redis Caching, and Async Processing.</p>
+                <p>Oracle, MySQL, PostgreSQL, Hibernate ORM, Redis Caching, Asynchronous Processing (@Async), and Multithreading.</p>
             </div>
             <div class="card">
                 <h3>Quality & DevOps</h3>
-                <p>CI/CD, Docker, Maven, TDD, Postman Automation, and OWASP Security Reviews.</p>
+                <p>CI/CD pipelines, Docker, Maven, JBoss FUSE, TDD, Postman Automation, and OWASP Security Reviews.</p>
+            </div>
+        </div>
+
+        <div class="summary-list">
+            <div class="summary-item">✔ 5+ Years Backend Experience</div>
+            <div class="summary-item">✔ 200,000+ Daily Transactions</div>
+            <div class="summary-item">✔ 99.9% Application Uptime</div>
+            <div class="summary-item">✔ FinTech & Transport Sectors</div>
+            <div class="summary-item">✔ Automated QA Integration</div>
+            <div class="summary-item">✔ Clean Architecture Advocate</div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title"><i class="fas fa-screwdriver-wrench"></i> Technical Skills</h2>
+        <p class="section-sub">Core technologies and frameworks I work with.</p>
+
+        <div class="skills">
+            <span class="skill">Java 17</span>
+            <span class="skill">J2EE</span>
+            <span class="skill">Spring Boot</span>
+            <span class="skill">Spring MVC</span>
+            <span class="skill">Spring Security</span>
+            <span class="skill">Microservices</span>
+            <span class="skill">REST / SOAP APIs</span>
+            <span class="skill">Hibernate ORM</span>
+            <span class="skill">Docker</span>
+            <span class="skill">CI/CD (Maven/Jenkins)</span>
+            <span class="skill">Oracle</span>
+            <span class="skill">MySQL</span>
+            <span class="skill">PostgreSQL</span>
+            <span class="skill">JWT Authentication</span>
+            <span class="skill">Multithreading</span>
+            <span class="skill">TDD / Mockito</span>
+            <span class="skill">Postman</span>
+            <span class="skill">Git</span>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title"><i class="fas fa-building"></i> Professional Experience</h2>
+        <p class="section-sub">Enterprise architecture, banking modules, and API development background.</p>
+
+        <div class="experience-timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-dot">1</div>
+                <div class="timeline-card">
+                    <div class="timeline-top">
+                        <div>
+                            <h3>Java Backend Developer</h3>
+                            <div class="company">SEKITECH | Client: Integrated Transport Centre (ITC)</div>
+                            <div class="location">Dubai, UAE</div>
+                        </div>
+                        <div class="period">Feb 2025 - Present</div>
+                    </div>
+                    <ul>
+                        <li>Engineered 10+ enterprise-grade microservices using Java 17, Spring Boot, and REST APIs, serving 50,000+ daily active users.</li>
+                        <li>Implemented JWT-based authentication, Spring Security filters, and role-based access control (RBAC), reducing unauthorized access incidents by 100%.</li>
+                        <li>Optimized JPA/Hibernate ORM mappings with lazy loading, caching, and custom fetch strategies, cutting average query response time by 40%.</li>
+                        <li>Built scheduled jobs and async processing pipelines (@Async, Spring Scheduler) for real-time event handling with zero downtime deployments.</li>
+                        <li>Enforced CI/CD best practices using Maven and automated builds; maintained 99.9% application uptime in production.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot">2</div>
+                <div class="timeline-card">
+                    <div class="timeline-top">
+                        <div>
+                            <h3>Java Backend Developer</h3>
+                            <div class="company">Federal Operations & Services Ltd (FedServ) | Client: Federal Bank</div>
+                            <div class="location">Ernakulam, India</div>
+                        </div>
+                        <div class="period">Nov 2022 - Oct 2024</div>
+                    </div>
+                    <ul>
+                        <li>Designed and delivered 20+ RESTful and SOAP APIs using Java, Spring Boot, and Spring MVC for core banking modules achieving 99.9% service availability.</li>
+                        <li>Developed microservices architecture integrated with JBoss FUSE for event-driven processing of 200,000+ daily banking transactions.</li>
+                        <li>Integrated external payment processors and third-party systems via secure APIs, fully compliant with RBI regulatory standards.</li>
+                        <li>Implemented multi-threading and concurrent transaction processing, handling peak loads of 5,000+ simultaneous users without performance degradation.</li>
+                        <li>Created automated Postman test suites with CI/CD integration, reducing manual QA time by 35% and accelerating release cycles.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot">3</div>
+                <div class="timeline-card">
+                    <div class="timeline-top">
+                        <div>
+                            <h3>Software Analyst</h3>
+                            <div class="company">Capgemini | Client: Barclays Bank</div>
+                            <div class="location">Bangalore, India</div>
+                        </div>
+                        <div class="period">Nov 2021 - Nov 2022</div>
+                    </div>
+                    <ul>
+                        <li>Analyzed business requirements and designed API specifications for 8+ banking integration services using Java, Spring Boot, and REST/SOAP protocols.</li>
+                        <li>Developed API endpoints aligned with J2EE standards and Barclays' internal security protocols; participated in OWASP security reviews.</li>
+                        <li>Worked with Oracle and SQL Server databases, writing PL/SQL packages and analytical queries supporting regulatory reporting.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title"><i class="fas fa-address-card"></i> Contact</h2>
+        <p class="section-sub">Available for immediate hire. No sponsorship required.</p>
+
+        <div class="contact-grid">
+            <div class="card">
+                <h3>Email</h3>
+                <p><a href="mailto:lekshmisaji2825@gmail.com">lekshmisaji2825@gmail.com</a></p>
+            </div>
+            <div class="card">
+                <h3>Phone</h3>
+                <p><a href="tel:+971543101600">+971 543101600</a></p>
+            </div>
+            <div class="card">
+                <h3>LinkedIn</h3>
+                <p><a href="https://linkedin.com/in/lekshmi-b14050140" target="_blank">linkedin.com/in/lekshmi-b14050140</a></p>
+            </div>
+            <div class="card">
+                <h3>Location</h3>
+                <p>Dubai, United Arab Emirates</p>
             </div>
         </div>
     </section>
 
-    <!-- Professional Experience Section -->
-    <section id="experience">
-        <h2 class="section-title">Professional Experience</h2>
-        
-        <div class="timeline-card">
-            <h3>Java Backend Developer</h3>
-            <div class="company">SEKITECH (Client: Integrated Transport Centre) | Feb 2025 - Present | Dubai, UAE</div>
-            <ul>
-                <li>Engineered 10+ enterprise-grade microservices using Java 17, Spring Boot, and REST APIs, serving 50,000+ daily active users.</li>
-                <li>Implemented JWT-based authentication, Spring Security filters, and role-based access control (RBAC), reducing unauthorized access incidents by 100%.</li>
-                <li>Optimized JPA/Hibernate ORM mappings with lazy loading, caching, and custom fetch strategies, cutting average query response time by 40%.</li>
-                <li>Built scheduled jobs and async processing pipelines (@Async, Spring Scheduler) for real-time event handling.</li>
-            </ul>
-        </div>
-
-        <div class="timeline-card">
-            <h3>Java Backend Developer</h3>
-            <div class="company">Federal Operations & Services Ltd (FedServ) | Nov 2022 - Oct 2024 | Ernakulam, India</div>
-            <ul>
-                <li>Designed and delivered 20+ RESTful and SOAP APIs for core banking modules achieving 99.9% service availability.</li>
-                <li>Developed microservices architecture integrated with JBoss FUSE for event-driven processing of 200,000+ daily banking transactions.</li>
-                <li>Integrated external payment processors and third-party systems via secure APIs, compliant with RBI regulatory standards.</li>
-                <li>Created automated Postman test suites with CI/CD integration, reducing manual QA time by 35%.</li>
-            </ul>
-        </div>
-
-        <div class="timeline-card">
-            <h3>Software Analyst</h3>
-            <div class="company">Capgemini (Client: Barclays Bank) | Nov 2021 - Nov 2022 | Bangalore, India</div>
-            <ul>
-                <li>Analyzed business requirements and designed API specifications for 8+ banking integration services.</li>
-                <li>Developed API endpoints aligned with J2EE standards and Barclays' internal security protocols.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Technical Skills -->
-    <section id="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills">
-            <span class="skill">Java 17</span> 
-            <span class="skill">Spring Boot</span> 
-            <span class="skill">Microservices</span> 
-            <span class="skill">REST APIs</span> 
-            <span class="skill">Hibernate</span> 
-            <span class="skill">Docker</span> 
-            <span class="skill">CI/CD</span> 
-            <span class="skill">Oracle</span> 
-            <span class="skill">PostgreSQL</span> 
-            <span class="skill">JWT Authentication</span> 
-            <span class="skill">Multithreading</span> 
-            <span class="skill">TDD</span>
-        </div>
-    </section>
 </main>
+
+<div class="floating-social">
+    <a href="https://linkedin.com/in/lekshmi-b14050140" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:lekshmisaji2825@gmail.com" class="gmail"><i class="fas fa-envelope"></i></a>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll('.counter');
+    let statsAnimated = false;
+
+    function animateCounter(counter){
+        const target = Number(counter.dataset.target);
+        const duration = 1500;
+        const start = performance.now();
+
+        function update(now){
+            const progress = Math.min((now - start) / duration, 1);
+            counter.textContent = Math.floor(progress * target).toLocaleString();
+            if(progress < 1){
+                requestAnimationFrame(update);
+            }else{
+                counter.textContent = target.toLocaleString();
+            }
+        }
+        requestAnimationFrame(update);
+    }
+
+    const statsObserver = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting && !statsAnimated){
+                counters.forEach(counter=>animateCounter(counter));
+                statsAnimated = true;
+            }
+        });
+    },{ threshold:0.4 });
+
+    const statsEl = document.querySelector(".stats");
+    if(statsEl){ statsObserver.observe(statsEl); }
+    
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 180;
+            if(window.scrollY >= sectionTop && window.scrollY < sectionTop + section.offsetHeight){
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if(link.getAttribute("href") === "#" + current){
+                link.classList.add("active");
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>
