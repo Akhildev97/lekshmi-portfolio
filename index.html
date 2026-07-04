@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
- 
+
 <style>
 :root{
     --bg:#0a0d13;
@@ -115,8 +115,27 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0
 }
 
 @media(max-width:850px){
-    .nav-links{display:none}
     .status-pill span.long{display:none}
+    
+    /* Make the header wrap to a new line on mobile */
+    nav {
+        flex-wrap: wrap;
+    }
+    
+    /* Display the links on a second row */
+    .nav-links {
+        display: flex;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 12px;
+    }
+    
+    /* Slightly smaller text to fit mobile screens */
+    .nav-links a {
+        font-size: 11.5px; 
+    }
 }
 
 /* ---------- hero ---------- */
@@ -273,29 +292,11 @@ footer{text-align:center;padding:44px 20px;color:var(--text-faint);border-top:1p
 .linkedin{background:#0077B5}
 .gmail{background:#EA4335}
 
-/* ====== MOBILE RESPONSIVE OVERRIDES ====== */
 @media(max-width:850px){
     .floating-social{display:none}
     body{overflow-x:hidden}
     .container{width:92%}
-    
-    /* Flexbox layout for Mobile Hero Grid */
-    .hero-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 36px;
-        text-align: center;
-    }
-    
-    .hero-grid > div:first-child {
-        order: 2; /* Text moves to bottom on mobile */
-    }
-    
-    .hero-grid > div:last-child {
-        order: 1; /* Photo moves to top on mobile */
-        margin-bottom: 20px;
-    }
-
+    .hero-grid{grid-template-columns:1fr;gap:36px;text-align:center}
     .hero .desc{margin-left:auto;margin-right:auto}
     .badges-row,.buttons{justify-content:center}
     .hero h1{font-size:36px}
@@ -304,11 +305,23 @@ footer{text-align:center;padding:44px 20px;color:var(--text-faint);border-top:1p
     .timeline::before{left:19px}
     .t-item{grid-template-columns:38px 1fr;gap:14px}
     .t-dot{width:38px;height:38px;font-size:12px}
-}
 
+ .hero-grid {
+        display: flex;
+        flex-direction: column;
+    }
+    .hero-grid > div:first-child {
+        order: 2; /* Text comes second on mobile */
+    }
+    .hero-grid > div:last-child {
+        order: 1; /* Photo comes first on mobile */
+        margin-bottom: 20px;
+    }
+}
 @media (prefers-reduced-motion: reduce){
     *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
 }
+ 
 </style>
 </head>
 
