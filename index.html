@@ -1,73 +1,259 @@
-<!-- Hero Section -->
-<section class="hero">
-    <div>
-        <div class="badge">Dubai, UAE • Immediate Hire • Open to Senior Java Developer Roles</div>
-        <h1>Hi, I'm <span>Lekshmi</span></h1>
-        <div class="subtitle">Senior Java Backend Developer | Spring Boot Microservices | FinTech Expert</div>
-        <p class="desc">
-            Results-driven Senior Java Backend Developer with 5+ years of expertise in architecting enterprise-grade microservices and secure, high-availability banking applications. Expert in Java 17, Spring Boot, and cloud-native practices.
-        </p>
-        <div class="buttons">
-            <a class="btn primary" href="Lekshmi - Java Developer - CV_2.pdf" target="_blank">View My Resume</a>
-            <a class="btn secondary" href="mailto:lekshmisaji2825@gmail.com">Contact Me</a>
-        </div>
-    </div>
-    <div class="photo-card">
-        <img src="Lekshmi.png" alt="Lekshmi - Senior Java Backend Developer">
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lekshmi | Senior Java Backend Developer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Segoe UI, Arial, sans-serif; background: #07111f; color: #eaf2ff; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .container { width: 90%; max-width: 1150px; margin: auto; }
 
-<!-- Stats Section -->
-<section class="stats">
-    <div class="stat"><h2>5+</h2><p>Years Experience</p></div>
-    <div class="stat"><h2>200k+</h2><p>Daily Transactions</p></div>
-    <div class="stat"><h2>99.9%</h2><p>System Uptime</p></div>
-    <div class="stat"><h2>30%</h2><p>Defect Reduction</p></div>
-</section>
+    header {
+        position: sticky; top: 0; z-index: 10;
+        background: rgba(7, 17, 31, .94);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; color: #60a5fa; font-weight: 800; font-size: 22px; }
+    .nav-links { display: flex; gap: 22px; font-size: 14px; color: #b9c7d8; }
+    .nav-links a:hover { color: #60a5fa; }
+    
+    .hero {
+        padding: 70px 0 50px;
+        display: grid;
+        grid-template-columns: 1.2fr .8fr;
+        gap: 50px;
+        align-items: center;
+    }
+    .badge {
+        display: inline-block; padding: 8px 14px;
+        border: 1px solid rgba(96, 165, 250, .3);
+        border-radius: 999px; color: #93c5fd;
+        background: rgba(96, 165, 250, .08);
+        margin-bottom: 20px; font-size: 14px;
+    }
+    h1 { font-size: 56px; line-height: 1.1; margin-bottom: 14px; }
+    h1 span { color: #60a5fa; }
+    .subtitle { font-size: 23px; color: #dbeafe; margin-bottom: 18px; }
+    .desc { color: #b9c7d8; max-width: 720px; margin-bottom: 18px; }
 
-<!-- Career Snapshot -->
-<section class="career-snapshot">
-    <h2 class="section-title">Career Snapshot</h2>
-    <div class="snapshot-grid">
-        <div class="card">
-            <h3>🏦 FinTech Expertise</h3>
-            <p>Delivered secure, high-availability banking applications with 99.9% service availability at Federal Bank.</p>
-        </div>
-        <div class="card">
-            <h3>🚀 Microservices Scale</h3>
-            <p>Engineered 10+ enterprise microservices serving 50,000+ daily active users in the transport sector[cite: 2].</p>
-        </div>
-        <div class="card">
-            <h3>⚡ Performance Optimization</h3>
-            <p>Reduced query response times by 40% through JPA/Hibernate optimization and caching strategies[cite: 2].</p>
-        </div>
-    </div>
-</section>
+    .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+        padding: 13px 20px; border-radius: 10px; font-weight: 700;
+        border: 1px solid rgba(255, 255, 255, .12); transition: .25s;
+        display: flex; align-items: center; gap: 8px; justify-content: center;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .primary { background: #2563eb; color: #fff; }
+    .secondary { background: rgba(255, 255, 255, .06); color: #eaf2ff; }
 
-<!-- About Me -->
-<section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p class="section-sub">Expert in Java 17, Spring Boot, and cloud-native practices with a focus on FinTech and transportation domains[cite: 2].</p>
-    <div class="grid">
-        <div class="card">
-            <h3>Backend Architecture</h3>
-            <p>Java 17, J2EE, Spring Boot, Spring Security, SOLID Principles, and Design Patterns[cite: 2].</p>
-        </div>
-        <div class="card">
-            <h3>Database & Messaging</h3>
-            <p>Oracle, MySQL, PostgreSQL, Stored Procedures, Redis Caching, and Async Processing[cite: 2].</p>
-        </div>
-        <div class="card">
-            <h3>Quality & DevOps</h3>
-            <p>CI/CD, Docker, Maven, TDD, Postman Automation, and OWASP Security Reviews[cite: 2].</p>
-        </div>
-    </div>
-</section>
+    .photo-card {
+        position: relative; background: rgba(15, 23, 42, .58);
+        padding: 14px; border-radius: 28px;
+        border: 1px solid rgba(96, 165, 250, .25);
+        box-shadow: 0 15px 35px rgba(37, 99, 235, .16);
+    }
+    .photo-card img { width: 100%; border-radius: 22px; display: block; }
 
-<!-- Technical Skills -->
-<section id="skills">
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="skills">
-        <span class="skill">Java 17</span> <span class="skill">Spring Boot</span> <span class="skill">Microservices</span> <span class="skill">REST APIs</span> <span class="skill">Hibernate</span> <span class="skill">Docker</span> <span class="skill">CI/CD</span> <span class="skill">Oracle</span> <span class="skill">PostgreSQL</span> <span class="skill">JWT Authentication</span> <span class="skill">Multithreading</span> <span class="skill">TDD</span>
+    section { padding: 52px 0; }
+    .section-title { font-size: 32px; margin-bottom: 12px; text-align: center; color: #60a5fa; }
+    .section-sub { color: #94a3b8; margin-bottom: 24px; text-align: center; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+        background: rgba(15, 23, 42, .86);
+        border: 1px solid rgba(255, 255, 255, .09);
+        border-radius: 18px; padding: 24px;
+        transition: .3s;
+    }
+    .card:hover {
+        transform: translateY(-8px); border-color: #60a5fa;
+        box-shadow: 0 15px 35px rgba(37, 99, 235, .2);
+    }
+    .card h3 { color: #93c5fd; margin-bottom: 10px; }
+    .card p, .card li { color: #b9c7d8; font-size: 15px; }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .stat {
+        text-align: center; background: linear-gradient(180deg, rgba(18, 34, 64, .95), rgba(11, 25, 47, .95));
+        border: 1px solid rgba(96, 165, 250, .25); padding: 26px 22px; border-radius: 18px; transition: .3s;
+    }
+    .stat:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 18px 40px rgba(37, 99, 235, .25); border-color: #60a5fa; }
+    .stat h2 { font-size: 46px; font-weight: 800; color: #60a5fa; margin-bottom: 6px; }
+    .stat p { font-size: 19px; font-weight: 500; color: #d9e8ff; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px;}
+    .skill {
+        padding: 9px 13px; border-radius: 999px;
+        background: rgba(255, 255, 255, .07);
+        border: 1px solid rgba(255, 255, 255, .08);
+        color: #dbeafe; font-size: 14px;
+    }
+
+    .timeline-card {
+        background: #0f172a; border: 1px solid rgba(96, 165, 250, .25);
+        border-radius: 22px; padding: 28px; margin-bottom: 25px; transition: .3s;
+    }
+    .timeline-card:hover { transform: translateY(-6px); border-color: #60a5fa; box-shadow: 0 18px 40px rgba(37, 99, 235, .22); }
+    .timeline-card h3 { color: #60a5fa; font-size: 24px; margin-bottom: 4px; }
+    .company { color: #eaf2ff; font-weight: 700; margin-bottom: 15px; }
+    .timeline-card ul { padding-left: 20px; }
+    .timeline-card li { color: #cbd5e1; margin-bottom: 10px; line-height: 1.7; }
+
+    @media(max-width: 850px) {
+        .hero { flex-direction: column-reverse; display: flex; text-align: center; gap: 35px; }
+        .stats, .grid { grid-template-columns: 1fr; }
+        .photo-card { max-width: 320px; margin: auto; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo"><span>Lekshmi</span></div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
     </div>
-</section>
+</header>
+
+<main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <div class="badge">Dubai, UAE • Immediate Hire • Open to Senior Java Developer Roles</div>
+            <h1>Hi, I'm <span>Lekshmi</span></h1>
+            <div class="subtitle">Senior Java Backend Developer | Spring Boot Microservices | FinTech Expert</div>
+            <p class="desc">
+                Results-driven Senior Java Backend Developer with 5+ years of expertise in architecting enterprise-grade microservices and secure, high-availability banking applications. Expert in Java 17, Spring Boot, and cloud-native practices.
+            </p>
+            <div class="buttons">
+                <a class="btn primary" href="Lekshmi - Java Developer - CV_2.pdf" target="_blank">
+                    <i class="fas fa-eye"></i> View My Resume
+                </a>
+                <a class="btn secondary" href="mailto:lekshmisaji2825@gmail.com">
+                    <i class="fas fa-envelope"></i> Contact Me
+                </a>
+            </div>
+        </div>
+        <div class="photo-card">
+            <img src="Lekshmi.png" alt="Lekshmi - Senior Java Backend Developer">
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stat"><h2>5+</h2><p>Years Experience</p></div>
+        <div class="stat"><h2>200k+</h2><p>Daily Transactions</p></div>
+        <div class="stat"><h2>99.9%</h2><p>System Uptime</p></div>
+        <div class="stat"><h2>30%</h2><p>Defect Reduction</p></div>
+    </section>
+
+    <!-- Career Snapshot -->
+    <section class="career-snapshot">
+        <h2 class="section-title">Career Snapshot</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🏦 FinTech Expertise</h3>
+                <p>Delivered secure, high-availability banking applications with 99.9% service availability at Federal Bank.</p>
+            </div>
+            <div class="card">
+                <h3>🚀 Microservices Scale</h3>
+                <p>Engineered 10+ enterprise microservices serving 50,000+ daily active users in the transport sector.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ Performance Optimization</h3>
+                <p>Reduced query response times by 40% through JPA/Hibernate optimization and caching strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-sub">Expert in Java 17, Spring Boot, and cloud-native practices with a focus on FinTech and transportation domains.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Backend Architecture</h3>
+                <p>Java 17, J2EE, Spring Boot, Spring Security, SOLID Principles, and Design Patterns.</p>
+            </div>
+            <div class="card">
+                <h3>Database & Messaging</h3>
+                <p>Oracle, MySQL, PostgreSQL, Stored Procedures, Redis Caching, and Async Processing.</p>
+            </div>
+            <div class="card">
+                <h3>Quality & DevOps</h3>
+                <p>CI/CD, Docker, Maven, TDD, Postman Automation, and OWASP Security Reviews.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="timeline-card">
+            <h3>Java Backend Developer</h3>
+            <div class="company">SEKITECH (Client: Integrated Transport Centre) | Feb 2025 - Present | Dubai, UAE</div>
+            <ul>
+                <li>Engineered 10+ enterprise-grade microservices using Java 17, Spring Boot, and REST APIs, serving 50,000+ daily active users.</li>
+                <li>Implemented JWT-based authentication, Spring Security filters, and role-based access control (RBAC), reducing unauthorized access incidents by 100%.</li>
+                <li>Optimized JPA/Hibernate ORM mappings with lazy loading, caching, and custom fetch strategies, cutting average query response time by 40%.</li>
+                <li>Built scheduled jobs and async processing pipelines (@Async, Spring Scheduler) for real-time event handling.</li>
+            </ul>
+        </div>
+
+        <div class="timeline-card">
+            <h3>Java Backend Developer</h3>
+            <div class="company">Federal Operations & Services Ltd (FedServ) | Nov 2022 - Oct 2024 | Ernakulam, India</div>
+            <ul>
+                <li>Designed and delivered 20+ RESTful and SOAP APIs for core banking modules achieving 99.9% service availability.</li>
+                <li>Developed microservices architecture integrated with JBoss FUSE for event-driven processing of 200,000+ daily banking transactions.</li>
+                <li>Integrated external payment processors and third-party systems via secure APIs, compliant with RBI regulatory standards.</li>
+                <li>Created automated Postman test suites with CI/CD integration, reducing manual QA time by 35%.</li>
+            </ul>
+        </div>
+
+        <div class="timeline-card">
+            <h3>Software Analyst</h3>
+            <div class="company">Capgemini (Client: Barclays Bank) | Nov 2021 - Nov 2022 | Bangalore, India</div>
+            <ul>
+                <li>Analyzed business requirements and designed API specifications for 8+ banking integration services.</li>
+                <li>Developed API endpoints aligned with J2EE standards and Barclays' internal security protocols.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills">
+            <span class="skill">Java 17</span> 
+            <span class="skill">Spring Boot</span> 
+            <span class="skill">Microservices</span> 
+            <span class="skill">REST APIs</span> 
+            <span class="skill">Hibernate</span> 
+            <span class="skill">Docker</span> 
+            <span class="skill">CI/CD</span> 
+            <span class="skill">Oracle</span> 
+            <span class="skill">PostgreSQL</span> 
+            <span class="skill">JWT Authentication</span> 
+            <span class="skill">Multithreading</span> 
+            <span class="skill">TDD</span>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
