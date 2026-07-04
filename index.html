@@ -396,6 +396,36 @@
         .timeline-item{grid-template-columns:50px 1fr;gap:14px;}
         .timeline-dot{width:38px;height:38px;font-size:14px;}
     }
+ /* Footer Styles */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #94a3b8;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    margin-top: 40px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.footer-social a {
+    color: #94a3b8;
+    transition: .3s;
+}
+
+.footer-social a:hover {
+    color: #60a5fa;
+    transform: translateY(-3px);
+}
+
+.footer-copyright {
+    font-size: 14px;
+}
 </style>
 </head>
 
@@ -630,7 +660,19 @@
     </section>
 
 </main>
-
+<footer>
+    <div class="footer-social">
+        <a href="https://linkedin.com/in/lekshmi-b14050140" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:lekshmisaji2825@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+    <p class="footer-copyright">
+        © 2026 Lekshmi. All rights reserved.
+    </p>
+</footer>
 <div class="floating-social">
     <a href="https://linkedin.com/in/lekshmi-b14050140" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
     <a href="mailto:lekshmisaji2825@gmail.com" class="gmail"><i class="fas fa-envelope"></i></a>
