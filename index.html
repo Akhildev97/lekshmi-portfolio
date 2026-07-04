@@ -294,15 +294,14 @@ footer{text-align:center;padding:44px 20px;color:var(--text-faint);border-top:1p
     }
     
     .hero-grid > div:first-child {
-        order: 2;
+        order: 2; /* Text goes second */
     }
     
     .hero-grid > div:last-child {
-        order: 1;
+        order: 1; /* Photo goes first */
         margin-bottom: 20px;
     }
 }
-
 @media (prefers-reduced-motion: reduce){
     *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
 }
