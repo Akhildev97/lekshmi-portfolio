@@ -396,6 +396,116 @@
         .timeline-item{grid-template-columns:50px 1fr;gap:14px;}
         .timeline-dot{width:38px;height:38px;font-size:14px;}
     }
+ .composite-container {
+    background: rgba(15, 23, 42, 0.58);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 24px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 10px;
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.16);
+    width: 100%;
+}
+
+.main-panel {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    /* Uses your existing image */
+    background: url('Lekshmi.png') center/cover no-repeat;
+    min-height: 500px;
+}
+
+.main-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Creates the dark fade at the bottom for text readability */
+    background: linear-gradient(to top, rgba(7, 17, 31, 0.95) 0%, rgba(7, 17, 31, 0) 40%);
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    z-index: 2;
+    color: white;
+}
+
+.text-overlay h1 {
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin-bottom: 2px;
+    font-weight: 300;
+}
+
+.text-overlay h2 {
+    font-size: 14px;
+    color: #60a5fa;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.text-overlay .skills-line {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #b9c7d8;
+    margin-bottom: 15px;
+}
+
+.tech-icons {
+    display: flex;
+    gap: 12px;
+    font-size: 20px;
+    color: #60a5fa;
+    opacity: 0.8;
+}
+
+.side-panels {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.side-panel {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #1f2937;
+    /* All side panels use the same image */
+    background-image: url('Lekshmi.jpg');
+    background-repeat: no-repeat;
+}
+
+/* Panel 1: Black & White, zoomed in on the face */
+.side-1 { 
+    background-position: center top 15%; 
+    background-size: 150%; 
+    filter: grayscale(100%) contrast(1.1); 
+}
+
+/* Panel 2: Slightly offset, high contrast */
+.side-2 { 
+    background-position: center 30%; 
+    background-size: 120%; 
+    filter: contrast(1.15) brightness(0.9);
+}
+
+/* Panel 3: Blue/Tech tint, zoomed in on the right side */
+.side-3 { 
+    background-position: right 40% top 20%; 
+    background-size: 140%; 
+    /* CSS trick to create a cinematic blue lighting effect */
+    filter: sepia(100%) hue-rotate(190deg) saturate(200%) brightness(0.8) contrast(1.2); 
+}
+
+@media (max-width: 850px) {
+    .composite-container { grid-template-columns: 1fr; }
+    .main-panel { min-height: 400px; }
+    .side-panels { grid-template-columns: repeat(3, 1fr); grid-template-rows: 120px; }
+}
 </style>
 </head>
 
@@ -450,9 +560,26 @@
             </div>
         </div>
 
-        <div class="photo-card">
-            <img src="Lekshmi.png" alt="Lekshmi - Senior Java Backend Developer" loading="eager">
+        <div class="composite-container">
+    <div class="main-panel">
+        <div class="text-overlay">
+            <h1>LEKSHMI</h1>
+            <h2>SENIOR JAVA DEVELOPER</h2>
+            <div class="skills-line">JAVA 17 | SPRING BOOT | MICROSERVICES</div>
+            <div class="tech-icons">
+                <i class="fab fa-java"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fab fa-docker"></i>
+                <i class="fas fa-database"></i>
+            </div>
         </div>
+    </div>
+    <div class="side-panels">
+        <div class="side-panel side-1"></div>
+        <div class="side-panel side-2"></div>
+        <div class="side-panel side-3"></div>
+    </div>
+</div>
     </section>
 
     <section class="stats">
