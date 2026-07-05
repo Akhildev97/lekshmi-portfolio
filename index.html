@@ -161,6 +161,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0
 }
 
 /* This styles the items into the capsule boxes from your image */
+/* This styles the items into completely ovular capsule boxes */
 .badges-row span {
     display: inline-flex;
     align-items: center;
@@ -168,10 +169,10 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0
     font-size: 14px;
     font-weight: 600;
     color: var(--text);
-    background: var(--bg-panel-2); /* Dark panel background */
-    border: 1px solid var(--border-strong); /* Subtle border */
-    padding: 12px 22px;
-    border-radius: 12px; /* Smooth rounded capsule corners */
+    background: var(--bg-panel-2); 
+    border: 1px solid var(--border-strong); 
+    padding: 8px 22px; /* Reduced vertical padding (from 12px to 8px) to reduce height */
+    border-radius: 999px; /* Increased border-radius to create a perfect ovular/pill shape */
     transition: all 0.3s ease;
 }
 
